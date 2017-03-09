@@ -1,1 +1,104 @@
 @chartset 'UTF-8';
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 24px; } }
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 25px; } }
+@media screen and (min-width: 384px) {
+  html {
+    font-size: 25.6px; } }
+@media screen and (min-width: 400px) {
+  html {
+    font-size: 26.666666666666668px; } }
+@media screen and (min-width: 414px) {
+  html {
+    font-size: 27.6px; } }
+@media screen and (min-width: 424px) {
+  html {
+    font-size: 28.266666666666667px; } }
+@media screen and (min-width: 480px) {
+  html {
+    font-size: 32px; } }
+@media screen and (min-width: 540px) {
+  html {
+    font-size: 36px; } }
+@media screen and (min-width: 720px) {
+  html {
+    font-size: 48px; } }
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 50px; } }
+ *{
+ 	padding: 0;
+ 	margin: 0;
+ }
+.container{
+	
+	margin: 0 auto;
+	padding: 0;
+}
+.header_nav{
+	height:  80px;
+	border-bottom: 1px solid #dee0df;
+	/*width: 1140px;*/
+	margin: 0 auto;
+	overflow: hidden;
+	.logo{
+		float: left;
+		height: 80px;
+		margin-left: 10%;
+	}
+	.title{
+		float: right;
+		overflow: hidden;
+		margin-right: 15%;
+	}
+	img{
+		
+		height: 80px;
+	}
+	ul{
+		list-style-type: none;
+		font-size: 0.45rem;
+	}
+	li{
+		float: right;
+		line-height: 80px;
+		margin: 0 15px;
+		color: #525252;
+	}
+	li:hover{
+		color: #f4645f;
+	}
+}
+.introduction{
+	width: 70%;
+	margin: 0 auto;
+	padding-top: 2.5rem;
+	.introduction_top{
+		margin: 0 auto;
+		width: 336px;
+	}
+	.introduction_bottom{
+		.introduction_Slogan{
+			text-align: center;
+			margin-top: 1rem;
+			span:first-child{
+				margin-bottom:0.4rem;
+			}
+			span:nth-child(3){
+				font-size:1.4rem;
+			}
+		}
+		.introduction_go{
+			text-align: center;
+			font-size: 10px;
+			color: #d0cece;
+			margin-bottom: 1rem;
+		}
+		.introduction_go:hover{
+			color: #4E4E4E;
+		}
+	}
+}
