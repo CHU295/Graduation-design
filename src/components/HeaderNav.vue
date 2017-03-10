@@ -5,11 +5,7 @@
 		</div>
 		<div class="title">
 			<ul>				
-				<li>联系我们</li>
-				<li>动态</li>
-				<li>课程</li>
-				<li>介绍</li>
-				<li>首页</li>
+				<li v-for='item in sorts' @click='jumpLink(item.href)'>{{item.title}}</li>
 			</ul>
 		</div>		
 	</section>
@@ -18,14 +14,34 @@
   export default {
     data() {
       return {
-        activeIndex: '1',
-        activeIndex2: '1'
+      	sorts:[
+      	{
+      		href:'',
+      		title:'加盟',
+      	},
+      	{
+      		href:'news',
+      		title:'动态',
+      	},
+      	{
+      		href:'curriculum',
+      		title:'课程',
+      	},
+      	{
+      		href:'introduct',
+      		title:'介绍',
+      	},
+      	{
+      		href:'index',
+      		title:'首页',
+      	},
+      	]
       };
     },
-    methods: {
-      handleSelect(key, keyPath) {
-        console.log(key, keyPath);
-      }
-    }
+    methods:{
+		jumpLink(href){
+			this.$router.push({path:href})
+		}
+	}
   }
 </script>

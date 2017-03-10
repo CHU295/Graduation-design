@@ -4,23 +4,41 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 
 const routes = [
-    // {
-    //     path: '/',
+    {
+        path: '/',
+        name: 'index',
+        meta: { auth: false},
+        component: resolve => require(['./views/index.vue'], resolve),
+    },
+    {
+        path: '/index',
+        name: 'index',
+        meta: { auth: false},
+        component: resolve => require(['./views/index.vue'], resolve),
+    },
+    {
+        path: '/introduct',
+        name: 'introduct',
+        meta: { auth: false},
+        component: resolve => require(['./views/introduct.vue'], resolve),
+    },
+     {
+        path: '/curriculum',
+        name: 'curriculum',
+        meta: { auth: false},
+        component: resolve => require(['./views/curriculum.vue'], resolve),
+    },
+     {
+        path: '/news',
+        name: 'news',
+        meta: { auth: false},
+        component: resolve => require(['./views/news.vue'], resolve),
+    },
+    //  {
+    //     path: '/introduct',
+    //     name: 'introduct',
     //     meta: { auth: false},
-    //     component: resolve => require(['./views/layouts/index.vue'], resolve),
-    //     children: [
-    //         {
-    //             path: '/',
-    //             name: 'index',
-    //             meta: { auth: false},
-    //             component: resolve => require(['./views/index.vue'], resolve),
-    //         },
-    //         {
-    //             path: 'user/:uid',
-    //             name: 'user',
-    //             component: resolve => require(['./views/user/user.vue'], resolve),
-    //         },
-    //     ]
+    //     component: resolve => require(['./views/introduct.vue'], resolve),
     // },
 ];
 
