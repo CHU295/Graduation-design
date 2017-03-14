@@ -1,6 +1,6 @@
 @chartset 'UTF-8';
 html {
-  font-size: 50px;
+  font-size: 20px;
   min-width: 1440px; }
 
  *{
@@ -8,7 +8,7 @@ html {
  	margin: 0; 	
  }
 .container{
-	
+	width: 100%;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -34,7 +34,7 @@ html {
 	}
 	ul{
 		list-style-type: none;
-		font-size: 0.45rem;
+		font-size: 21px;
 	}
 	li{
 		float: right;
@@ -47,12 +47,13 @@ html {
 	}
 	li:hover{
 		color: #f4645f;
+		cursor: pointer;
 	}
 }
 .introduction{
 	width: 70%;
 	margin: 0 auto;
-	padding-top: 2.5rem;
+	padding-top: 125px;
 	.introduction_top{
 		margin: 0 auto;
 		width: 336px;
@@ -60,19 +61,19 @@ html {
 	.introduction_bottom{
 		.introduction_Slogan{
 			text-align: center;
-			margin-top: 1rem;
+			margin-top: 50px;
 			span:first-child{
-				margin-bottom:0.4rem;
+				margin-bottom:20px;
 			}
 			span:nth-child(3){
-				font-size:1.4rem;
+				font-size:90px;
 			}
 		}
 		.introduction_go{
 			text-align: center;
 			font-size: 10px;
 			color: #d0cece;
-			margin-bottom: 1rem;
+			margin-bottom: 50px;
 		}
 		.introduction_go:hover{
 			color: #4E4E4E;
@@ -81,26 +82,26 @@ html {
 }
 .index_teacher{
 	width: 100%;
-	padding: 2rem 150px;
+	padding: 100px 150px;
 	box-sizing: border-box;
 	margin: 0 auto;
 	background: url("../img/bg21.jpg");
    .index_teacher_news{
 		text-align: center;
 		>h1{
-			font-size:1.2rem;
+			font-size:60px;
 		}
 		>p{
-			font-size: 0.7rem;
+			font-size: 35px;
 		}
 		>span{
 			color: #BFBEBE;
-			font-size: 0.2rem;
+			font-size: 10px;
 		}
    }
    .index_teacher_box{
 		width: 100%;
-		height: 14rem;
+		height: 700px;
 		background-color: #fff;
 		border: 1px solid #eae7ea;
 		margin-top: 50px;
@@ -154,28 +155,28 @@ html {
 }
 .index_new{
 	width: 100%;
-	padding: 2rem 150px  0 2rem;
+	padding: 100px 150px  0 100px;
 	box-sizing: border-box;
 	margin: 0 auto;
 	background: url("../img/bg21.jpg");
 	.index_new_news{
 		text-align: center;
 		>h1{
-		    font-size: 0.97rem;
+		    font-size: 47px;
 		}
 		>p{
 		    line-height: 1.5em;
-		    font-size: 0.5rem;
+		    font-size: 25px;
 		}
 		>a{
 		    text-decoration: none;
 		    color: #aab14a;
-		    font-size: 0.2rem;
+		    font-size: 10px;
 		}
 	}
 	.index_new_news1{
-		height: 14rem;
-		margin-top: 1rem;
+		height: 700px;
+		margin-top: 50px;
 		.index_new_news_p{
 			float: left;
 			width: 50%;
@@ -189,7 +190,7 @@ html {
 			height:100%;
 			width:49%;
 			float: right;
-			font-size: 0.3rem;
+			font-size: 15px;
 			ul{
 				list-style: none;
 				width: 100%;
@@ -440,4 +441,103 @@ footer{
 		}
 	}
 }
-
+.curriculum_list{
+	width: 100%;
+	background-color: #ededed;
+	display:-webkit-flex;
+	justify-content: center;
+	ul{
+		/*display: -webkit-inline-flex;*/
+		/*display: -moz-inline-flex;*/
+		/*display: -ms-inline-flex;*/
+		/*display: -o-inline-flex;*/
+		/*display: inline-flex;*/
+		width: 1000px;
+		margin-top: 50px;
+		/*-ms-align-items: space-around;*/
+		/*align-items: space-around;*/
+		li{
+			display: -webkit-inline-flex;
+			display: -moz-inline-flex;
+			display: -ms-inline-flex;
+			display: -o-inline-flex;
+			display: inline-flex;
+			background-color: #fff;
+			width: 100%;
+			justify-content: space-around;
+			padding: 25px 0;
+			margin-bottom: 25px;
+			.curriculum_left{
+				display: -webkit-flex;
+				width: 20%;
+				border: 1px solid #E8E8E8;
+				img{
+					height: 100%;
+					width: 100%;
+				}
+			}
+			.curriculum_right{
+				display: -webkit-flex;
+				flex-direction:column;
+				justify-content: space-between;
+				width: 65%;
+				.curriculum_right_title{
+					span:nth-child(1){
+						font-size: 25px;
+					}
+					span:nth-child(2){
+						font-size: 15px;
+						margin-left: 10px;
+						color: #B5B4B4;
+					}
+				}
+				.curriculum_right_brief{
+					font-size: 15px;
+					overflow: hidden;
+				    text-overflow: ellipsis;
+				    display: -webkit-box;
+				    -webkit-line-clamp: 2;
+				    -webkit-box-orient: vertical;
+				}
+				.curriculum_right_botton{
+					align-self:flex-end;
+					text-align: right;
+					margin-right: 20px;
+					font-size: 17px;
+					padding: 10px 30px;
+					border: 1px solid #DADADA;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+}
+.mask{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 100;
+}
+.curriculum_detail{
+	background-color: #fff;
+	position: fixed;
+	width: 54%;
+	top: 15%;
+	bottom: 15%;
+	left: 23%;
+	right: 23%;
+	z-index: 1001;
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+	padding: 50px 50px;
+	h3{
+		margin: 10px 0;
+		color: #CBCBCB
+	}
+	p{
+		text-indent: 40px;
+	}
+}

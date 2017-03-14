@@ -1,7 +1,7 @@
 <template>
 <section class="carousel_area">
-    <el-carousel :interval="4000" type="card" height="12rem">
-      <el-carousel-item v-for="item in img">
+    <el-carousel :interval="4000" type="card" height="600px">
+      <el-carousel-item v-for="(item,index) in img" :key="item.id">
         <img class="carousel_img" :src="item.url">
       </el-carousel-item>
     </el-carousel>
