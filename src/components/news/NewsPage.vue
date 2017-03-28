@@ -3,7 +3,7 @@
 		<ul>
 			<li class="news_page_li" v-for='item in news'>
 		        <div class="news_page_li_right">
-		        	<a class="nqlTitle" href="http://www.yongtop.cn/news/comp/127.html" target="_blank">{{item.title}}</a>
+		        	<a class="nqlTitle" @click='detail()'>{{item.title}}</a>
 		        	<div class="news_page_li_right_Sum">{{item.body}}</div>
 		        	<div class="news_page_li_right_DetDate">2016-10-26</div>
 		        </div>
@@ -60,6 +60,11 @@
 						body:'2016年10月10日，为期两天的2016年城市岩土工程西湖论坛”在浙江杭州浙江饭店顺利举行。此次论坛就城市地下综合体、城市地下管廊和城市地质灾害防治以及岩土本构理论前沿等问题展...'
 					},
 				]
+			}
+		},
+		methods:{
+			detail(){
+				this.$router.push({name:'newsdetail'})
 			}
 		}
 	}

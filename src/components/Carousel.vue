@@ -1,5 +1,6 @@
 <template>
 <section class="carousel_area">
+    <dd class="carousel_title">教育生态</dd>
     <el-carousel :interval="4000" type="card" height="600px">
       <el-carousel-item v-for="(item,index) in img" :key="item.id">
         <img class="carousel_img" :src="item.url">
@@ -44,7 +45,13 @@
     height: 100%;
   }
   .carousel_area{
-    padding-top: 2.2rem;
-    background-color: #f0f2f1;
+    padding: 2.2rem 0;
+    /*background-color: #f0f2f1;*/
+  }
+  .carousel_title{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: bold;
   }
 </style>

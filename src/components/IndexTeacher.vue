@@ -3,7 +3,7 @@
 		<div class="index_teacher_news">
 			<h1>名师专栏</h1>
 			<p>十年树木，十载风，十载雨，十万栋梁。</p>
-			<span>more</span>		
+			<!-- <span>more</span>		 -->
 		</div>
 		<ul class="index_teacher_box">
 			<li>

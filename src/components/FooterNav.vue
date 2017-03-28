@@ -11,6 +11,8 @@
 			</ul>
 		</div>
 		<div>
+			<p >公司地址：浙江大学城市学院51号</p>
+			<p >电子邮箱：873056154@qq.com</p>
 			<p >Copyright © 2016 . Design By 储小康</p>
 		</div>
 	</footer>

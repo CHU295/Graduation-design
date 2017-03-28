@@ -16,7 +16,7 @@
       return {
       	sorts:[
       	{
-      		href:'',
+      		href:'join',
       		title:'加盟',
       	},
       	{
@@ -27,12 +27,12 @@
       		href:'curriculum',
       		title:'课程',
       	},
+      	// {
+      	// 	href:'introduct',
+      	// 	title:'介绍',
+      	// },
       	{
-      		href:'introduct',
-      		title:'介绍',
-      	},
-      	{
-      		href:'index',
+      		href:'/',
       		title:'首页',
       	},
       	]

@@ -10,9 +10,9 @@
 				<span>爱的成长是一点一滴的积累</span><br>
 				<span>教育的力量是一代代的传承</span>
 			</div>
-			<div class="introduction_go">
+			<!-- <div class="introduction_go">
 				more
 			</div>
-		</div>
+ -->		</div>
 	</div>
 </template>

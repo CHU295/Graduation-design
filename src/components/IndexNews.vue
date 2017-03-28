@@ -3,7 +3,7 @@
 			<div class="index_new_news">
 				<h1>动态</h1>
 				<p>爱的成长是一点一滴的积累，教育的力量是一代代的传承</p>
-				<a href="kcdt.html">more about</a>
+				<!-- <router-link :to='news'>more about</router-link> -->
 			</div>
 			<div class="index_new_news1">
 				<div class="index_new_news_p">
