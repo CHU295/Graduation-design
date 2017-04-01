@@ -7,22 +7,22 @@ import VueAxios from 'vue-axios'
 import ElementUI from 'element-ui'
 import VueRouter from 'vue-router'
 import router from './router'
+import Vuex from 'vuex'
+import store from './vuex/store'
 import 'element-ui/lib/theme-default/index.css'
 import 'assets/css/style.scss'
-
+import 'assets/css/styleAdmin.scss'
 Vue.use(VueAxios, axios)
 Vue.use(VueRouter)
 Vue.use(ElementUI)
+Vue.use(Vuex)
 
-/* eslint-disable no-new */
-// new Vue({
-//   el: '#app',
-//   template: '<App/>',
-//   components: { App }
-// })
 var app = new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 });
+
+// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';

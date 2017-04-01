@@ -2,7 +2,7 @@
   <div class="container">
       <header-nav></header-nav>
       <news-header></news-header>
-      <news-page></news-page>
+      <news-page :data='data'></news-page>
       <news-change></news-change>
       <footer-nav></footer-nav>
   </div>
@@ -16,12 +16,23 @@ import NewsChange from '../components/news/NewsChange.vue'
 import FooterNav from '../components/FooterNav.vue'
 
 export default {
+  data(){
+    return{
+      data:'',
+    }
+  },
   components:{
     HeaderNav,
     NewsPage,
     NewsHeader,
     NewsChange,
     FooterNav,
-  }
+  },
+  mounted(){
+    this.axios.post(this.$store.state.root+'/news.php').then((res) =>{
+      console.log(res.data)
+      this.data = res.data.data
+    })
+  },
 }
 </script>

@@ -11,8 +11,8 @@
 			</ul>
 		</div>
 		<div>
-			<p >公司地址：浙江大学城市学院51号</p>
-			<p >电子邮箱：873056154@qq.com</p>
+			<p >公司地址：{{data.adress}}</p>
+			<p >电子邮箱：{{data.email}}</p>
 			<p >Copyright © 2016 . Design By 储小康</p>
 		</div>
 	</footer>
@@ -21,6 +21,7 @@
 export default{
 	data(){
 		return{
+			data:[],
 			img:[
 				{
 					url1:require('../assets/img/qq1.png'),
@@ -54,6 +55,12 @@ export default{
 		show(item){
 			item.show=!item.show
 		}
-	}
+	}, 
+	  mounted(){
+	    this.axios.post(this.$store.state.root+'/index.php').then((res) =>{
+	      console.log(res)
+	      this.data = res.data.data[0]
+	    })
+	  },
 }
 </script>

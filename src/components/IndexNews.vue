@@ -7,14 +7,14 @@
 			</div>
 			<div class="index_new_news1">
 				<div class="index_new_news_p">
-                    <img :src="items.url" v-for='items in img' v-show='items.show'>
+                    <img :src="items.img" v-for='items in img' v-show='items.show'>
 	            </div>
 	            <div class="index_new_news_t">
 	                <ul>
 	                    <li :class="news1.show?'news_choose':''" v-for='news1 in img' @mouseenter='news_change(news1)'>
 	                    	<a :class="news1.show?'news_choose1':''" href="#">
 		                    	<h2>{{news1.title}}</h2>
-		                    	<p>{{news1.body}}</p>
+		                    	<p>{{news1.section}}</p>
 	                    	</a>
 	                    </li>
 	                </ul>                
@@ -23,6 +23,7 @@
 		</div>
 </template>
 <script>
+import Vue from 'vue'
   export default{
     data(){
       return{
@@ -54,6 +55,17 @@
         ],
       }
     },
+    mounted(){
+    this.axios.post(this.$store.state.root+'/news.php').then((res) =>{
+      console.log(res.data)
+      this.img = []
+      for (var i = 0; i < 4; i++) {
+        this.img.push(res.data.data[i])
+        Vue.set(this.img[i],'show',false)
+      }
+      this.img[0].show=true
+    })
+  },
     methods:{
     	news_change(news1){
     		for(var s of this.img){

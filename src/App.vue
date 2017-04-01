@@ -9,9 +9,14 @@ import index from './views/index.vue'
 
 export default {
   name: 'app',
+  data(){
+  	return{
+  		data:'',
+  	}
+  },
   components: {
     index
-  }
+  },
 }
 </script>
 

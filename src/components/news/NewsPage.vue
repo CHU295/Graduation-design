@@ -1,18 +1,18 @@
 <template>
 	<div class="news_page">
 		<ul>
-			<li class="news_page_li" v-for='item in news'>
+			<li class="news_page_li" v-for='item in data'>
 		        <div class="news_page_li_right">
 		        	<a class="nqlTitle" @click='detail()'>{{item.title}}</a>
-		        	<div class="news_page_li_right_Sum">{{item.body}}</div>
-		        	<div class="news_page_li_right_DetDate">2016-10-26</div>
+		        	<div class="news_page_li_right_Sum"><p>{{item.section}}</p></div>
+		        	<div class="news_page_li_right_DetDate">{{item.time}}</div>
 		        </div>
 		        <img src="../../assets/img/icon_show_1.jpg" href="/news/comp/" class=" serLeft1" style="width: 165px;height: 140px;">
-		        <div class="news_page_li_Date" style="background-color: rgb(120, 120, 120);">
-			        <span class="news_page_li_Date_Day">{{item.day}}</span>
+		        <!-- <div class="news_page_li_Date" style="background-color: rgb(120, 120, 120);"> -->
+			       <!--  <span class="news_page_li_Date_Day">{{item.day}}</span>
 			        <br>
 			        <span class="news_page_li_Date_My">{{item.date}}</span>
-		        </div>		        
+		        </div> -->		        
 		        <div class="news_page_li_block"></div>
 	        </li>
 	    </ul>
@@ -20,6 +20,7 @@
 </template>
 <script>
 	export default{
+		props:['data'],
 		data(){
 			return{
 				news:[

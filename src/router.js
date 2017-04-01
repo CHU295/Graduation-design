@@ -46,6 +46,36 @@ const routes = [
         meta: { auth: false},
         component: resolve => require(['./views/join.vue'], resolve),
     },
+    {
+    path:'/admin/',
+    component: resolve => require(['./views/layout/admin.vue'], resolve),
+    children: [
+        {
+            path: 'login',
+            name: 'login',
+            meta: { auth: false},
+            component: resolve => require(['./views/admin/login.vue'], resolve),
+        },
+        {
+            path: 'admin',
+            name: 'admin',
+            meta: { auth: false},
+            component: resolve => require(['./views/admin/admin.vue'], resolve),
+        },
+        {
+            path: 'secondHand',
+            name: 'secondHand',
+            meta: { auth: false},
+            component: resolve => require(['./views/admin/House/secondHand.vue'], resolve),
+        },
+        {
+            path: 'input',
+            name: 'input',
+            meta: { auth: false},
+            component: resolve => require(['./views/admin/House/input.vue'], resolve),
+        },
+    ]
+    },
 ];
 
 const router = new VueRouter({

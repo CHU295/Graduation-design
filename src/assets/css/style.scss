@@ -210,6 +210,14 @@ html {
 		    		    color: #474747;
 		    		    line-height:1.8em;
 		    		}
+		    		p{
+		    			text-overflow: -o-ellipsis-lastline;
+		    			overflow: hidden;
+		    			text-overflow: ellipsis;
+		    			display: -webkit-box;
+		    			-webkit-line-clamp: 3;
+		    			-webkit-box-orient: vertical;
+		    		}
 				}
 			}
 		}
@@ -413,6 +421,14 @@ footer{
 					font-size: 14px;
 					padding:  26px 0 20px;
 					color: #616161;
+					p{
+						text-overflow: -o-ellipsis-lastline;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						display: -webkit-box;
+						-webkit-line-clamp: 3;
+						-webkit-box-orient: vertical;
+					}					
 				}
 				.news_page_li_right_DetDate{
 					font-size: 14px;
@@ -496,6 +512,7 @@ footer{
 				display: -webkit-flex;
 				width: 20%;
 				border: 1px solid #E8E8E8;
+				min-height:150px;
 				img{
 					height: 100%;
 					width: 100%;

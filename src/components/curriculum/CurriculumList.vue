@@ -11,7 +11,7 @@
 						<span>{{item.time}}</span>
 					</div>
 					<div class="curriculum_right_brief">
-						{{item.body}}
+						{{item.section}}
 					</div>
 					<span class="curriculum_right_botton" @click='detail(item)' @click.stop=''>
 						查看详情

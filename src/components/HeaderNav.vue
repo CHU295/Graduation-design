@@ -1,7 +1,7 @@
 <template>
 	<section class="header_nav">
 		<div class="logo">
-			<img src="../assets/img/logo.png">
+			<img :src="data.logo">
 		</div>
 		<div class="title">
 			<ul>				
@@ -14,6 +14,7 @@
   export default {
     data() {
       return {
+        data:[],
       	sorts:[
       	{
       		href:'join',
@@ -37,11 +38,17 @@
       	},
       	]
       };
+    }, 
+    mounted(){
+      this.axios.post(this.$store.state.root+'/index.php').then((res) =>{
+        console.log(res)
+        this.data = res.data.data[0]
+      })
     },
     methods:{
-		jumpLink(href){
-			this.$router.push({path:href})
-		}
+  		jumpLink(href){
+  			this.$router.push({path:href})
+		},
 	}
   }
 </script>

@@ -1,11 +1,11 @@
 <template>
   <div class="container">
       <header-nav></header-nav>
-      <introduction></introduction>
+      <introduction :data='data'></introduction>
       <!-- <carousel></carousel> -->
       <index-teacher></index-teacher>
       <index-news></index-news>
-      <footer-nav></footer-nav>
+      <footer-nav :data='data'></footer-nav>
       <contact></contact>
   </div>
 </template>
@@ -20,6 +20,11 @@ import FooterNav from '../components/FooterNav.vue'
 import Contact from '../components/Contact.vue'
 
 export default {
+  data(){
+    return{
+      data:'',
+    }
+  },
   components:{
     HeaderNav,
     Carousel,
@@ -28,6 +33,12 @@ export default {
     IndexNews,
     FooterNav,
     Contact,
-  }
+  },  
+  mounted(){
+    this.axios.post(this.$store.state.root+'/my-site/index.php').then((res) =>{
+      console.log(res)
+      this.data = res.data.data[0]
+    })
+  },
 }
 </script>
