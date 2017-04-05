@@ -51,10 +51,11 @@
       	})
       },
       update(){
-        var a = this.form
+        var a = this.form.pas
         console.log()
         this.axios.post(this.$store.state.root+'/loginChange.php',a,{headers: {'Content-Type': 'application/x-www-form-urlencoded;application/json;'}}).then((res) =>{
           console.log(res)
+          this.$router.go(0)
         })
       }
     }

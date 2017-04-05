@@ -3,8 +3,8 @@
 		<ul>
 			<li class="news_page_li" v-for='item in data'>
 		        <div class="news_page_li_right">
-		        	<a class="nqlTitle" @click='detail()'>{{item.title}}</a>
-		        	<div class="news_page_li_right_Sum"><p>{{item.section}}</p></div>
+		        	<a class="nqlTitle" @click='detail(item)'>{{item.title}}</a>
+		        	<div class="news_page_li_right_Sum"><p v-html='item.section'></p></div>
 		        	<div class="news_page_li_right_DetDate">{{item.time}}</div>
 		        </div>
 		        <img src="../../assets/img/icon_show_1.jpg" href="/news/comp/" class=" serLeft1" style="width: 165px;height: 140px;">
@@ -64,8 +64,8 @@
 			}
 		},
 		methods:{
-			detail(){
-				this.$router.push({name:'newsdetail'})
+			detail(item){
+				this.$router.push({name:'newsdetail',params:{a:item}})
 			}
 		}
 	}

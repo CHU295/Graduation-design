@@ -36,7 +36,6 @@ export default {
   },  
   mounted(){
     this.axios.post(this.$store.state.root+'/index.php').then((res) =>{
-      console.log(res)
       this.data = res.data.data[0]
     })
   },

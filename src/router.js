@@ -35,7 +35,7 @@ const routes = [
         component: resolve => require(['./views/news.vue'], resolve),
     }, 
     {
-        path: '/newsdetail',
+        path: '/newsdetail/:a',
         name: 'newsdetail',
         meta: { auth: false},
         component: resolve => require(['./views/newsdetail.vue'], resolve),
@@ -62,18 +62,7 @@ const routes = [
             meta: { auth: false},
             component: resolve => require(['./views/admin/admin.vue'], resolve),
         },
-        {
-            path: 'secondHand',
-            name: 'secondHand',
-            meta: { auth: false},
-            component: resolve => require(['./views/admin/House/secondHand.vue'], resolve),
-        },
-        {
-            path: 'input',
-            name: 'input',
-            meta: { auth: false},
-            component: resolve => require(['./views/admin/House/input.vue'], resolve),
-        },
+        
     ]
     },
 ];

@@ -17,15 +17,15 @@
         data:[],
       	sorts:[
       	{
-      		href:'join',
+      		href:'/join',
       		title:'加盟',
       	},
       	{
-      		href:'news',
+      		href:'/news',
       		title:'动态',
       	},
       	{
-      		href:'curriculum',
+      		href:'/curriculum',
       		title:'课程',
       	},
       	// {

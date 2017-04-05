@@ -1,12 +1,17 @@
 <template>
 	<div class="introduct_brand">
-	 	<h1>有家早教机构 给予童年该有的爱</h1>
+	 	<h1>{{data.kouhao}}</h1>
 		<div class="introduct_brand_main">
-			<h1>2016</h1>
-			<p>有家早期教育建立了第一家早期教育机构，中国早期教育视频节目的市场正处于一个迫切需要科学化、规范化的阵痛时期。一方面是广大家长对孩子教育的重视和早期教育意识的觉醒，一方面则是成体系反应科学早教知识视频节目稀缺，不仅缺少科学早教的内容载体形式，还缺乏推广平台。尤其是央视曝光国内动画片含有暴力等不良内容，不适宜作为婴幼儿的早期教育视频使用。《积木宝贝闯世界》电视节目正是在这样的背景下应运而生，旨在向更广大的家庭传播科学的、系统的早期教育知识，以及促进整个早教视频行业的规范化发展。</p>
+			<h1>{{data.build_year}}</h1>
+			<p>{{data.introduction}}</p>
 			<div class="introduct_brand_main1">
-				<h2>330-888-666</h2>
+				<h2>{{data.tel}}</h2>
 			</div>
 		</div>
 	</div>
 </template>
+<script>
+	export default{
+		props:['data'],
+	}
+</script>

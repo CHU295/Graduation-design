@@ -1,10 +1,10 @@
 <template>
   <div class="container">
       <header-nav></header-nav>
-      <introductBrand></introductBrand>
+      <introductBrand :data=data></introductBrand>
       <carousel></carousel>
       <case></case>
-      <join></join>
+      <join :data=data></join>
       <footer-nav></footer-nav>
       <contact></contact>
   </div>
@@ -20,6 +20,11 @@ import Case from '../components/join/Case.vue'
 import Join from '../components/join/Join.vue'
 
 export default {
+  data(){
+    return{
+      data:[],
+    }
+  },
   components:{
     HeaderNav,
     Carousel,
@@ -28,6 +33,11 @@ export default {
     IntroductBrand,
     Case,
     Join,
-  }
+  },
+  mounted(){
+    this.axios.post(this.$store.state.root+'/index.php').then((res) =>{
+      this.data = res.data.data[0]
+    })
+  },
 }
 </script>

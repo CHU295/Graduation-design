@@ -1,5 +1,5 @@
 <template>
-<section class="carousel_area">
+<section class="carousel_area" v-if='show'>
     <dd class="carousel_title">教育生态</dd>
     <el-carousel :interval="4000" type="card" height="600px">
       <el-carousel-item v-for="(item,index) in img" :key="item.id">
@@ -19,8 +19,16 @@
           {url:require('../assets/img/icon_show_4.jpg')},
           {url:require('../assets/img/icon_show_5.jpg')},
           {url:require('../assets/img/icon_show_6.jpg')},
-        ]
+        ],
+      show:false
       }
+    },
+    mounted(){
+      this.axios.post(this.$store.state.root+'/carous.php').then((res) =>{
+        console.log(res.data)
+        this.img = res.data.data
+        this.show=true
+      })
     }
   }
 </script>

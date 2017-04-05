@@ -31,10 +31,15 @@
 		</div>
 		<div style="background-color: rgb(153, 164, 222);padding:50px 0;">
 			更多详情请联系客服<br>
-			电话：15168278670
+			电话：{{data.tel}}
 		</div>
 	</div>
 </template>
+<script>
+	export default{
+		props:['data'],
+	}
+</script>
 <style>
 	.join-step{
 		margin: 0 auto;
