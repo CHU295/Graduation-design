@@ -35,7 +35,7 @@ export default {
     Contact,
   },  
   mounted(){
-    this.axios.post(this.$store.state.root+'/my-site/index.php').then((res) =>{
+    this.axios.post(this.$store.state.root+'/index.php').then((res) =>{
       console.log(res)
       this.data = res.data.data[0]
     })
