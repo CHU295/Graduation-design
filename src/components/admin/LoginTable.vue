@@ -27,8 +27,9 @@
 			submit(){
 				this.axios.post(this.$store.state.root+'/login.php').then((res) =>{
 					var a = res.data.data[0]
-				  if (this.account == a.name && this.password == a.pas) {				  	
-				  	this.$router.push({name:'admin'})
+				  if (this.account == a.name && this.password == a.pas) {
+				  	localStorage.login = true			  	
+				  	this.$router.push({name:'admin',params:{id:1}})
 				  }else{
 				  	alert('账号或密码错误')
 				  }

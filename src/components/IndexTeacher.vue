@@ -1,8 +1,8 @@
 <template>
 	<div class="index_teacher">
 		<div class="index_teacher_news">
-			<h1>名师专栏</h1>
-			<p>十年树木，十载风，十载雨，十万栋梁。</p>
+			<h1>{{data0.teacher_0}}</h1>
+			<p>{{data0.teacher_1}}</p>
 			<!-- <span>more</span>		 -->
 		</div>
 		<ul class="index_teacher_box">
@@ -45,3 +45,8 @@
 		</ul>
 	</div>
 </template>
+<script>
+	export default{
+    	props:['data0'],
+	}
+</script>

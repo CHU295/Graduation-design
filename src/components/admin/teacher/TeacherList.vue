@@ -2,29 +2,31 @@
 	<div class="second-list">
 		<div class="all-edit">
 			<div class="left">
-				<span>课程</span>
+				<span>名师</span>
 			</div>
 		</div>
 		<div class="list">
 			<div class="strip">				
 				<el-row style='width:100%;'>
 				  <!-- <el-col :span="1"><div class="grid-content bg-purple-dark"><el-checkbox v-model="checked0"></el-checkbox></div></el-col> -->
-				  <el-col :span="3"><div class="grid-content bg-purple-dark">ID</div></el-col>
-				  <el-col :span="6"><div class="grid-content bg-purple-dark">图片</div></el-col>
-                  <el-col :span="8"><div class="grid-content bg-purple-dark">名称</div></el-col>
-				  <el-col :span="5"><div class="grid-content bg-purple-dark">操作</div></el-col>
+				  <el-col :span="4"><div class="grid-content bg-purple-dark">名称</div></el-col>
+				  <el-col :span="6"><div class="grid-content bg-purple-dark">头像</div></el-col>
+                  <el-col :span="10"><div class="grid-content bg-purple-dark">简介</div></el-col>
+				  <el-col :span="4"><div class="grid-content bg-purple-dark">操作</div></el-col>
 				</el-row>
 			</div>
 			<div class="strip-list" v-for='list in data'>
 		    	<el-row class="list">
                    <!-- <el-col :span="1"><el-checkbox v-model="checked0"></el-checkbox></el-col> -->
-                   <el-col :span="3">{{list.id}}</el-col>
+                   <el-col :span="4">{{list.name}}</el-col>
                    <el-col :span="6"><img :src="list.img"></el-col>
-		    	   <el-col :span="8">{{list.title}}</el-col>  
-		    	  <el-col :span="5">
+		    	   <el-col :span="10">
+                    <span style="font-size: 15px;">{{list.introduction1}}</span><br>
+                    <span style="font-size: 20px;">{{list.introduction2}}</span>
+                   </el-col>  
+		    	  <el-col :span="4">
 		    	  	<div class="edit">
-		    	  		<span>编辑</span> | <span @click='delete0(list)'>删除</span>
-		    	  			    	  	
+		    	  		<span @click='edit(list)'>编辑</span> 	    	  			    	  	
 		    	  </div></el-col>
 		    	</el-row>
 			</div>
@@ -176,7 +178,7 @@
       };
     },
     mounted(){
-    this.axios.post(this.$store.state.root+'/col.php').then((res) =>{
+    this.axios.post(this.$store.state.root+'/teacherSerch.php').then((res) =>{
       console.log(res.data)
       this.data = res.data.data
     })
@@ -191,11 +193,8 @@
         this.checkAll = checkedCount === this.cities.length;
         this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
       },
-      delete0(list){
-        this.axios.post(this.$store.state.root+'/colDelete.php',list.id).then((res) =>{
-            console.log(res.data)
-          })
-        this.$router.go(0)
+      edit(list){
+        this.$emit('go3',list)
       }
     }
   };

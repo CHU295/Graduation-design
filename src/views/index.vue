@@ -3,10 +3,10 @@
       <header-nav></header-nav>
       <introduction :data='data'></introduction>
       <!-- <carousel></carousel> -->
-      <index-teacher></index-teacher>
-      <index-news></index-news>
+      <index-teacher :data0='data'></index-teacher>
+      <index-news :data0='data'></index-news>
       <footer-nav :data='data'></footer-nav>
-      <contact></contact>
+      <contact v-if='show' :data='data'></contact>
   </div>
 </template>
 
@@ -23,6 +23,7 @@ export default {
   data(){
     return{
       data:'',
+      show:false,
     }
   },
   components:{
@@ -37,6 +38,7 @@ export default {
   mounted(){
     this.axios.post(this.$store.state.root+'/index.php').then((res) =>{
       this.data = res.data.data[0]
+      this.show = true
     })
   },
 }

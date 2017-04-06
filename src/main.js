@@ -159,5 +159,15 @@ var app = new Vue({
   components: { App }
 });
 
-
-// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+router.beforeEach((to, from, next) => {
+    if (localStorage.login) {
+        next()
+    }else if(to.meta.auth == false){
+        next()
+    }else{
+        next({
+            name:'login'
+        })
+    }
+    
+})

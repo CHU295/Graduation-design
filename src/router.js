@@ -57,9 +57,9 @@ const routes = [
             component: resolve => require(['./views/admin/login.vue'], resolve),
         },
         {
-            path: 'admin',
+            path: 'admin/:id',
             name: 'admin',
-            meta: { auth: false},
+            meta: { auth: true},
             component: resolve => require(['./views/admin/admin.vue'], resolve),
         },
         

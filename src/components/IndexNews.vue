@@ -1,8 +1,8 @@
 <template>
 		<div class="index_new">
 			<div class="index_new_news">
-				<h1>动态</h1>
-				<p>爱的成长是一点一滴的积累，教育的力量是一代代的传承</p>
+				<h1>{{data0.news_0}}</h1>
+				<p>{{data0.news_1}}</p>
 				<!-- <router-link :to='news'>more about</router-link> -->
 			</div>
 			<div class="index_new_news1">
@@ -25,6 +25,7 @@
 <script>
 import Vue from 'vue'
   export default{
+    props:['data0'],
     data(){
       return{
         img:[

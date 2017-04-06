@@ -5,8 +5,8 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state:{
-  	root:'http://localhost:80/my-site',
-  	// root:'http://my-site.com',
+  	// root:'http://localhost:80/my-site',
+  	root:'/api',
   },
   getters:{
 		

@@ -25,19 +25,14 @@
 				this.content = val
 			},
 			submit(){
-				var a = {}
-				a.title = this.input
-				a.time = this.input1
-				a.section = this.content
-				console.log(a)
-				this.axios.post(this.$store.state.root+'/colAdd.php',a,{headers: {'Content-Type': 'application/json;'}}).then((res) =>{
+				var images = new FormData()
+				images.append('files',document.getElementById('col_add').files[0])
+				images.append('title',this.input)
+				images.append('time',this.input1)
+				images.append('section',this.content)
+				this.axios.post(this.$store.state.root+'/colAdd.php',images,{headers: {'Content-Type': 'application/json;'}}).then((res) =>{
 				  	console.log(res.data)
-				  	// var images = new FormData()
-				  	// images.append('files',document.getElementById('col_add').files[0])
-				  	// this.axios.post(this.$store.state.root+'/carousAdd.php',images).then((res) =>{
-				  	//   console.log(res.data)
-				  	// })
-				  // this.$router.go(0)
+				  this.$router.go(0)
 				})
 			}
 		}

@@ -3,7 +3,7 @@
 		<section>
 			<div class="top">
 				<h1 v-html='data.title'></h1>
-				<h5>{{time}}</h5>
+				<h5>{{data.time}}</h5>
 			</div>
 			<div class="bottom">
 				<p v-html='data.section'></p>
