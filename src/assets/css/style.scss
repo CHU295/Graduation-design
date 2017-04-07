@@ -529,6 +529,7 @@ footer{
 				.curriculum_right_title{
 					span:nth-child(1){
 						font-size: 25px;
+						cursor: pointer;
 					}
 					span:nth-child(2){
 						font-size: 15px;
@@ -552,6 +553,7 @@ footer{
 					padding: 10px 30px;
 					border: 1px solid #DADADA;
 					border-radius: 5px;
+					cursor: pointer;
 				}
 			}
 		}

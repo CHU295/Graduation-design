@@ -8,7 +8,8 @@ html{
     font-size:24px;
 }
 .admin-login{
-    background-color: #1AC8FD;    
+    background-color: #1AC8FD; 
+    /*background-image: url(../img/bg1.png);   */
     .admin-1{
         padding-right: 200px;
         box-sizing: border-box;
@@ -104,6 +105,8 @@ html{
     padding-left: 300px;
     >div{
         height:100%;
+        display: flex;
+        align-items: center;
     }
     img{
         height: 100%;
@@ -131,14 +134,13 @@ html{
             font-weight: bold;
             color: #DDFCE5;
         }
-        .name{
-            color: #DDFCE5;
-        }
         .mystore{
             color: #DDFCE5;
+            cursor: pointer;
         }
         .logout{
             color: #DDFCE5;
+            cursor: pointer;
         }
     }
     .admin-header-right{
@@ -287,9 +289,10 @@ html{
                 padding: 10px 20px;
                 background-color: #E1DFDF;
                 .left{
-                    border: 1px solid #8D8D8D;
+                    border: 1px solid #D1D1D1;
                     background-color: #F8F8F8;
                     padding: 2px 8px;
+                    border-radius: 5px;
                 }
                 .right{
                     display:-webkit-flex;

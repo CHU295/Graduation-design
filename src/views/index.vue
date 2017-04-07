@@ -38,6 +38,7 @@ export default {
   mounted(){
     this.axios.post(this.$store.state.root+'/index.php').then((res) =>{
       this.data = res.data.data[0]
+      document.title = this.data.title
       this.show = true
     })
   },

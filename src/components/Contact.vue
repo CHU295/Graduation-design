@@ -7,7 +7,7 @@
 			<img class="weichat_contract" src="../assets/img/weichat_contract.jpg" v-if='weichat_contract'>
 		</div>
 		<div>
-			<a href="#top"><i class="el-icon-arrow-up"></i></a>
+			<a style="cursor: pointer" @click="toTop"><i class="el-icon-arrow-up"></i></a>
 		</div>
 	</div>
 </template>
@@ -28,6 +28,18 @@ export default{
 	methods:{
 		show(){
 			this.weichat_contract=!this.weichat_contract
+		},
+		toTop: function() {
+		  let leader = document.scrollingElement.scrollTop, target = 0, timer = null;
+		  timer = setInterval(function(){
+		      leader = leader + (target - leader) / 5;
+		      window.scrollTo(0,leader);
+		      if (Math.floor(leader) === 0) {
+		          clearInterval(timer);
+		          document.scrollingElement.scrollTop = null;
+		          console.log(document.scrollingElement.scrollTop);
+		      }
+		  },30)
 		}
 	}
 }

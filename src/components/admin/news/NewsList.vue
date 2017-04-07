@@ -23,7 +23,7 @@
 		    	   <el-col :span="8">{{list.title}}</el-col>  
 		    	  <el-col :span="5">
 		    	  	<div class="edit">
-		    	  		<span>编辑</span> | <span @click='delete0(list)'>删除</span>
+		    	  		<!-- <span>编辑</span> |  --><span @click='delete0(list)'>删除</span>
 		    	  			    	  	
 		    	  </div></el-col>
 		    	</el-row>
