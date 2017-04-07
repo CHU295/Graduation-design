@@ -3,7 +3,7 @@
       <header-nav></header-nav>
       <introductBrand :data=data></introductBrand>
       <carousel></carousel>
-      <case></case>
+      <!-- <case></case> -->
       <join :data=data></join>
       <footer-nav></footer-nav>
       <contact></contact>

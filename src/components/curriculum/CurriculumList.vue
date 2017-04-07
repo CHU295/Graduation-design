@@ -10,7 +10,7 @@
 						<span>{{item.title}}</span>
 						<span>{{item.time}}</span>
 					</div>
-					<div class="curriculum_right_brief" v-html='item.section'>
+					<div class="curriculum_right_brief" v-html='item.section_none'>
 					</div>
 					<span class="curriculum_right_botton" @click='detail(item)' @click.stop=''>
 						查看详情

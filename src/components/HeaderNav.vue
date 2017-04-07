@@ -1,7 +1,7 @@
 <template>
 	<section class="header_nav">
 		<div class="logo">
-			<img :src="data.logo">
+			<router-link :to='{name:"index"}'><img :src="data.logo"></router-link>
 		</div>
 		<div class="title">
 			<ul>				

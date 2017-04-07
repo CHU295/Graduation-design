@@ -11,7 +11,7 @@
 	            </div>
 	            <div class="index_new_news_t">
 	                <ul>
-	                    <li :class="news1.show?'news_choose':''" v-for='news1 in img' @mouseenter='news_change(news1)'>
+	                    <li :class="news1.show?'news_choose':''" v-for='news1 in img' @mouseenter='news_change(news1)'  @click='detail(news1)'>
 	                    	<a :class="news1.show?'news_choose1':''" href="#">
 		                    	<h2>{{news1.title}}</h2>
 		                    	<p>{{news1.section}}</p>
@@ -73,7 +73,10 @@ import Vue from 'vue'
     			s.show=false
     		}
     		news1.show=true
-    	}
+    	},
+      detail(news1){
+        this.$router.push({name:'newsdetail',params:{a:news1}})
+      }
     }
   }
 </script>

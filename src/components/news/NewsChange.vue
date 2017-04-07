@@ -8,13 +8,14 @@
 			      :page-sizes="[100, 200, 300, 400]"
 			      :page-size="100"
 			      layout="total, sizes, prev, pager, next, jumper"
-			      :total="1">
+			      :total="data0/1">
 			    </el-pagination>
 		</div>
 	</div>
 </template>
 <script>
   export default {
+    props:['data0'],
     methods: {
       handleSizeChange(val) {
         console.log(`每页 ${val} 条`);

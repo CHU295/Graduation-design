@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import HeaderNav from '../components/HeaderNav.vue'
 import CurriculumList from '../components/curriculum/CurriculumList.vue'
 import NewsChange from '../components/news/NewsChange.vue'
@@ -62,6 +63,12 @@ export default {
     this.axios.post(this.$store.state.root+'/col.php').then((res) =>{
       console.log(res.data)
       this.news = res.data.data
+      for(var a of this.news){
+        var b = a.section.replace(/<\/?.+?>/g, "");
+
+        b= b.replace(/&nbsp;/g, " ");
+        Vue.set(a,'section_none',b)
+      }
     })
   },
   methods:{

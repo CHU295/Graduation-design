@@ -1,5 +1,5 @@
 <template>
-	<div class="index_teacher">
+	<div class="index_teacher" v-if='show'>
 		<div class="index_teacher_news">
 			<h1>{{data0.teacher_0}}</h1>
 			<p>{{data0.teacher_1}}</p>
@@ -8,38 +8,38 @@
 		<ul class="index_teacher_box">
 			<li>
 				<div class="index_teacher_box_1">
-					<span>冯德全</span>
-					<p>“0岁方案”创始人<br>中国当代著名的早期教育理论家</p>
+					<span>{{data[0].name}}</span>
+					<p>{{data[0].introduction1}}<br>{{data[0].introduction2}}</p>
 				</div>
 				<div class="index_teacher_box_2">
-					<img src="../assets/img/teacher_1.jpg">
+					<img :src="data[0].img">
 				</div>
 			</li>
 			<li>
 				<div class="index_teacher_box_2">
-					<img src="../assets/img/teacher_2.jpg">
+					<img :src="data[1].img">
 				</div>
 				<div class="index_teacher_box_1">
-					<span>张雅莲</span>
-					<p>《孕婴专家》栏目主讲<br>中国著名亲子教育专家</p>
+					<span>{{data[1].name}}</span>
+					<p>{{data[1].introduction1}}<br>{{data[1].introduction2}}</p>
 				</div>
 			</li>
 			<li>
 				<div class="index_teacher_box_1">
-					<span>孙砚冰</span>
-					<p>红黄蓝教育机构培训部总监<br>国际职业培训经理高级培训师</p>
+					<span>{{data[2].name}}</span>
+					<p>{{data[2].introduction1}}<br>{{data[2].introduction2}}</p>
 				</div>
 				<div class="index_teacher_box_2">
-					<img src="../assets/img/teacher_3.jpg">
+					<img :src="data[2].img">
 				</div>
 			</li>
 			<li>
 				<div class="index_teacher_box_2">
-					<img src="../assets/img/teacher_4.jpg">
+					<img :src="data[3].img">
 				</div>
 				<div class="index_teacher_box_1">
-					<span>杜曼</span>
-					<p>医学博士<br>儿童启蒙教育家</p>
+					<span>{{data[3].name}}</span>
+					<p>{{data[3].introduction1}}<br>{{data[3].introduction2}}</p>
 				</div>
 			</li>
 		</ul>
@@ -48,5 +48,17 @@
 <script>
 	export default{
     	props:['data0'],
+    	data(){
+    		return{
+    			data:[],
+    			show:false
+    		}
+    	},
+    	mounted(){
+	    this.axios.post(this.$store.state.root+'/teacherSerch.php').then((res) =>{
+		      this.data = res.data.data
+		      this.show = true
+		    })
+		  },
 	}
 </script>
